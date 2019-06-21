@@ -1,0 +1,92 @@
+ <!-- Menu Toggle Button -->
+ <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="user">
+     <!-- The user image in the navbar-->
+     {{#if isSignin }}
+     <img src="public/images/user2-160x160.jpg" class="user-image" alt="User Image">
+     <span class="hidden-xs" >你好，{{username}}</span>
+     {{else}}
+     <!-- hidden-xs hides the username on small devices so only the image appears. -->
+     <span class="hidden-xs" id="user-signin">登录</span>
+     <span class="hidden-xs" id="user-signup">注册</span>
+     {{/if}}
+
+ </a>
+ <ul class="dropdown-menu">
+
+     {{#if isSignin }}
+
+     <!-- The user image in the menu -->
+     <li class="user-header">
+         <img src="public/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+         <p>
+             欢迎进入拉勾后台管理系统
+             <small>{{username}}</small>
+         </p>
+     </li>
+     <!-- Menu Body -->
+
+     {{else}}
+     <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">用户登录</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" id="user-form">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label">账号:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">密码:</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="请输入密码">
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </form>
+      </div>
+      {{/if}}
+
+     <!-- <li class="user-body">
+         <div class="row">
+             <div class="col-xs-4 text-center">
+                 <a href="#">花朵</a>
+             </div>
+             <div class="col-xs-4 text-center">
+                 <a href="#">销量</a>
+             </div>
+             <div class="col-xs-4 text-center">
+                 <a href="#">好友</a>
+             </div>
+         </div>
+     </li> -->
+
+
+     {{#if isSignin}}
+     <!-- Menu Footer-->
+     <li class="user-footer">
+         <div class="pull-left">
+             <a href="#" class="btn btn-primary btn-flat" id="signout">注销</a>
+         </div>
+         <div class="pull-right">
+             <a href="javascript:;" class="btn btn-default btn-flat">取消</a>
+         </div>
+     </li>
+     {{else}}
+     <li class="user-footer">
+        <div class="pull-left">
+            <a href="#" class="btn btn-primary btn-flat" id="confirm">确定</a>
+        </div>
+        <div class="pull-right">
+            <a href="javascript:;" class="btn btn-default btn-flat">取消</a>
+        </div>
+     </li>
+     {{/if}}
+
+ </ul>
